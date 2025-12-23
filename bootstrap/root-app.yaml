@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/demoak93/openshift-gitops-infra.git
     targetRevision: main
-    path: platform
+    path: .
   destination:
     server: https://kubernetes.default.svc
   syncPolicy:
