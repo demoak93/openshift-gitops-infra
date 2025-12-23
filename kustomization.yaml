@@ -1,0 +1,6 @@
+resources:
+  - argocd
+  - bootstrap
+  - gitops-operator
+  - operators
+
