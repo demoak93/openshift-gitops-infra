@@ -15,6 +15,6 @@ spec:
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:
-      prune: true
-      selfHeal: true
+      prune: true        # 🔴 THIS fixes your issue
+      selfHeal: true     # recommended
 
