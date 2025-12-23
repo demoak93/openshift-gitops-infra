@@ -1,0 +1,4 @@
+resources:
+  - argocd.yaml
+  - appproject-default.yaml
+
