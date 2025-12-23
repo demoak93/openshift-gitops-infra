@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: root-bootstrap
+  namespace: openshift-gitops
+  labels:
+    argocd.argoproj.io/instance: openshift-gitops
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/demoak93/openshift-gitops-infra.git
+    targetRevision: main
+    path: platform
+  destination:
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
