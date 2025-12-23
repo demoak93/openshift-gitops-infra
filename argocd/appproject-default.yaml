@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: default
+  namespace: openshift-gitops
+spec:
+  description: Default project with UI visibility for cluster admins
+  sourceRepos:
+    - '*'
+  destinations:
+    - namespace: '*'
+      server: '*'
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  roles:
+    - name: readonly
+      description: Read-only access for UI users
+      policies:
+        - p, proj:default:readonly, applications, get, default/*, allow
+        - p, proj:default:readonly, applications, list, default/*, allow
+      groups:
+        - system:authenticated
+
