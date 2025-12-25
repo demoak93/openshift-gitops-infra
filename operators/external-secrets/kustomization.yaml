@@ -1,6 +1,9 @@
 resources:
   - namespace.yaml
   - db-app-namespace.yaml
+  - eso-reader-sa.yaml
+  - eso-backend-role.yaml
+  - eso-backend-rolebinding.yaml
   - operatorgroup.yaml
   - subscription.yaml
   - backend/namespace.yaml
