@@ -26,4 +26,7 @@ spec:
       kind: ConfigMap
       name: argocd-rbac-cm
       namespace: openshift-gitops
+      jsonPointers:
+        - /data
+        - /metadata/annotations
 
