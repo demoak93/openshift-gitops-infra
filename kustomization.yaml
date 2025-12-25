@@ -3,4 +3,3 @@ resources:
   - bootstrap
   - gitops-operator
   - operators
-  - apps
