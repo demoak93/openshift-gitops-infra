@@ -1,4 +1,4 @@
 resources:
   - argocd.yaml
   - appproject-default.yaml
-
+  - argocd-rbac-cm.yaml

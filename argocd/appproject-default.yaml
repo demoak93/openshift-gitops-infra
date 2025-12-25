@@ -4,7 +4,7 @@ metadata:
   name: default
   namespace: openshift-gitops
 spec:
-  description: Default project with UI visibility for cluster admins
+  description: Default project with UI visibility and sync access
   sourceRepos:
     - '*'
   destinations:
@@ -14,11 +14,19 @@ spec:
     - group: '*'
       kind: '*'
   roles:
-    - name: readonly
-      description: Read-only access for UI users
+    - name: admin
+      description: Full access for platform admins
       policies:
-        - p, proj:default:readonly, applications, get, default/*, allow
-        - p, proj:default:readonly, applications, list, default/*, allow
+        # View applications
+        - p, proj:default:admin, applications, get, default/*, allow
+        - p, proj:default:admin, applications, list, default/*, allow
+
+        # Sync applications (THIS FIXES YOUR ERROR)
+        - p, proj:default:admin, applications, sync, default/*, allow
+
+        # Optional but recommended
+        - p, proj:default:admin, applications, update, default/*, allow
+        - p, proj:default:admin, applications, delete, default/*, allow
       groups:
         - system:authenticated
 
