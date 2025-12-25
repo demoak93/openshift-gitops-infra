@@ -10,4 +10,6 @@ resources:
   - backend/postgres-source-secret.yaml
   - clustersecretstore.yaml
   - externalsecret-postgres.yaml
+  - eso-tokenreview-clusterrole.yaml
+  - eso-tokenreview-binding.yaml
 
