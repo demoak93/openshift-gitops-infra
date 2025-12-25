@@ -2,4 +2,8 @@ resources:
   - namespace.yaml
   - operatorgroup.yaml
   - subscription.yaml
+  - backend/namespace.yaml
+  - backend/postgres-source-secret.yaml
+  - secretstore.yaml
+  - externalsecret-postgres.yaml
 
