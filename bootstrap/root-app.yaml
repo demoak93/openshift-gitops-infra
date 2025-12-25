@@ -7,14 +7,23 @@ metadata:
     argocd.argoproj.io/instance: openshift-gitops
 spec:
   project: default
+
+  destination:
+    server: https://kubernetes.default.svc
+
   source:
     repoURL: https://github.com/demoak93/openshift-gitops-infra.git
     targetRevision: main
     path: .
-  destination:
-    server: https://kubernetes.default.svc
+
   syncPolicy:
     automated:
-      prune: true        # 🔴 THIS fixes your issue
-      selfHeal: true     # recommended
+      prune: true
+      selfHeal: true
+
+  ignoreDifferences:
+    - group: ""
+      kind: ConfigMap
+      name: argocd-rbac-cm
+      namespace: openshift-gitops
 
