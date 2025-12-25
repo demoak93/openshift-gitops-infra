@@ -8,6 +8,6 @@ resources:
   - subscription.yaml
   - backend/namespace.yaml
   - backend/postgres-source-secret.yaml
-  - secretstore.yaml
+  - clustersecretstore.yaml
   - externalsecret-postgres.yaml
 
